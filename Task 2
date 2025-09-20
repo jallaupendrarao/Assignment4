@@ -1,0 +1,21 @@
+try:
+    user = str(input('Enter text to write to the file :'))
+    file1 = open('output.txt', 'w')
+    file_write = file1.write(str(user))
+    file1.close()
+except FileNotFoundError:
+    print("The file 'output.txt' was not found.")
+finally:
+    print('Data successfully written to output.txt')
+
+try:
+    user1 = str(input('Enter additional text to append :'))
+    file1=open('output.txt', 'a')
+    file1.write('\n' + user1)
+    file1.close()
+finally:
+    print('Data successfully appended')
+
+file1 = open('output.txt', 'r')
+print(f"final content of output.txt:\n {file1.read()}")
+file1.close()
